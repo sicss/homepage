@@ -18,9 +18,8 @@ main {
 
 att {
   display: block;
-  margin-top: 34%;
+  margin-top: 28%;
   font-family: cursive;
-  font-weight: 200;
   font-size: 1.6em;
 }
 
@@ -31,6 +30,18 @@ f {
 f::first-letter {
   font-size: 1.3em;
   color: darkred;
+}
+
+anno {
+  max-width: 26em;
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  font-weight: lighter;
+  color: black;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 tbd {
@@ -46,13 +57,34 @@ m {
   white-space: nowrap;
 }
 
+a {
+  padding: 2px 4px;
+  margin: -2px -4px;
+  transition: background-color .2s ease-out;
+  color: black;
+}
+
+a:hover {
+  background-color: #d7edfa;  
+}
+
 </style>
 </header>
 
 <body>
   <main>
     <att><f>Greetings</f> to the world from the <m><f>Sicss</f> <f>Society</f></m></att>
-    <tbd>[Contents TBA]</tbd>
+    <anno>
+      <f>Sicss</f> is a student led collegiate academic society on its
+      way to be established, based at
+      <m>Nagoya University</m>, that serves to support and promote
+      student initialized educational activities in the field of
+      computer science.
+    </anno>
+    <anno>
+      <a href="mailto:info@sicss.org">mailto:info@sicss.org</a>
+    </anno>
+    <tbd>[More TBA]</tbd>
   </main>
 </body>
 
