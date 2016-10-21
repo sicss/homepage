@@ -1,2 +1,2 @@
 # homepage
-Homepage for the Sicss Society
+Homepage repository for the Sicss Society
