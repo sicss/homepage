@@ -1,0 +1,106 @@
+---
+layout:     article_math-cs
+key:        Logics-2016-Lecture-Notes-Plan
+date:       2016-10-14 01:00:00 +0900
+place:      Nagoya, Japan
+author:     Haochen Xie
+categories: nagoya-u assignments
+mathjax:    no
+revision:   First Revision, First Draft
+---
+
+.Part One
+
+.. 形式システムの意義
+.. 研究対象としての形式システムとメタ論理の違い
+.. 自然演義、数学帰納法、帰納的定義、及び帰納的定義の上の直観帰納法(構造的帰納法)
+.. 数学記号の準備
+... 集合記号(comprehension, pair, Cartesian product)
+... relation
+... equivalence relation
+... function
+.... definition, basic notation (f : A -> B & a |-> b)
+.... surjection, injection, bijection
+.... lambda notation
+.... function composition
+.... extensionality
+.... id, constant
+... partial function
+.. 軽く帰納的な定義
+.. 軽く構造的帰納法を回す
+
+.Part Two
+
+. 素朴な集合論紹介(非形式的)
+.. comprehension記号
+.. N, Z, Q, R, null
+.. membership, subset
+.. 集合演算子(union, intersection, subtraction, complement, Cartesian product, arrow)
+. 形式言語=構文論+意味論
+. 構文論(BNFの紹介も含む)
+. 意味論(denotation semantics)
+
+.Part Three
+
+. 自然言語での述語論理(universeについて言及する)
+. 述語論理階数について
+. 一階述語論理の構文論
+. 束縛変数について
+. 一階述語論理の意味論
+. 一階述語論理の意味論(集合的解釈)
+. 一階述語論理の基礎的な事柄
+.. negationの意味論的含意
+.. equivalenceの意味論的含意
+.. 二重否定の自己消去
+.. De Morgan (量化子、連・選言)
+
+.Part Four
+
+. 証明論の意義
+. 証明論が多数あって、スタイルが大分違う
+. reference rule notationの紹介
+. judgment notationの紹介
+. 証明木の紹介
+. 自然演義のルールとそれぞれの意味
+. 構成的論理と背理法
+. 証明の例と証明木の書き方
+
+.Part Five
+
+. 正しさとモデルの存在性
+. 証明可能とモデルの存在性(|-と||-の違いを強調)
+. 健全性の言明
+. Characterization problemと完全性の言明
+. 健全性と完全性の因果葛藤
+. 健全性の証明
+. 完全性の証明
+.. consistency
+.. strategy
+.. Henkin constructionと極大矛盾集合の提示
+.. 証明の流れ
+.. 同値関係と商集合
+.. Henkin theoryと極大矛盾集合の詳細
+.. 完全性定理の証明
+. Compactness theorem
+
+.Part Six
+
+. Inductive Definitionの形式化とInduction Principle
+.. Connection with Completeness Theorem
+. Kleene's recursion theorem
+. Gödel's incompleteness theorem(?)
+
+.Next Seminar (Proofs and Types)
+
+. 直観主義論理
+. simply typed lambda calculusの定義
+. lambda calculusで軽くプログラミング
+.. boolean, pair
+.. Y combinator <- 軽いかどうかは謎だが
+. Curry-Howard isomorphism
+. Terms in functional programming language as proof 
+
+// Local Variables:
+// mode: adoc
+// fill-column: 100
+// End:
