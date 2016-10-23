@@ -6,6 +6,12 @@
 
 /* stylesheet of page header */
 
+@media print {
+  .page-navigation {
+    display: none;
+  }
+}
+
 .page-navigation ul {
   text-align: center;
 }

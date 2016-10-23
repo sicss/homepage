@@ -59,11 +59,30 @@ main {
   font-family: monospace;
 }
 
+.article-meta .url-ref:before {
+  content: "["
+}
+
+.article-meta .url-ref:after {
+  content: "]"
+}
+
+.article-meta .url-ref {
+  font-size: 0.8em;
+  font-family: monospace;
+}
+
 @media screen {
   .article-meta .repo-ref {
     color: lightgray;
   }
   .article-meta .repo-ref:hover {
+    color: black;
+  }
+  .article-meta .url-ref {
+    color: lightgray;
+  }
+  .article-meta .url-ref:hover {
     color: black;
   }
 }

@@ -10,12 +10,6 @@ footer {
   padding-bottom: 2em;
 }
 
-@media print {
-  footer {
-    display: none;
-  }
-}
-
 .copyright-notice {
   max-width: 50em;
   margin-left: auto;
