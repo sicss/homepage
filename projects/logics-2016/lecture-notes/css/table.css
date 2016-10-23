@@ -1,0 +1,56 @@
+/* table.css */
+
+/* file:     publication/internal/css/main.css */
+/* author:   Haochen Xie                       */
+/* creation: October, 2016                     */
+
+/* stylesheet for tables */
+
+table {
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse: collapse;
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
+}
+
+thead th {
+  padding-top: 0.2em;
+}
+
+tbody tr:first-child td {
+  padding-top: 0.4em;
+}
+
+tbody tr:last-child td {
+  padding-bottom: 0.4em;
+}
+
+thead tr:last-child  {
+  border-bottom: black solid 1px;
+}
+
+tbody tr td:first-child {
+  text-align: right;
+}
+
+tr td:first-child {
+  padding-left: 0.6em;
+}
+
+tr td:last-child {
+  padding-right: 0.6em;
+}
+
+th {
+  text-align: center;
+}
+
+td p, th p {
+  line-height: 1.6em;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+

@@ -1,0 +1,40 @@
+/* adoc.css */
+
+/* file:     publication/internal/css/adoc.css */
+/* author:   Haochen Xie                       */
+/* creation: July, 2016                        */
+
+/* AsciiDoc specific stylesheet */
+
+div.title {
+  font-family: sans-serif;
+  font-variant: small-caps;
+    font-weight: lighter;
+}
+
+@media print {
+  div.title {
+    color: black;
+  }
+}
+
+@media screen {
+  div.title {
+    color: gray;
+  }
+}
+
+div.title + p {
+  margin-top: 0.4em;
+}
+
+.preface {
+  width: 89%;
+  margin-right: auto;
+  margin-left: auto
+}
+
+.preface div.title {
+  text-align: center;
+}
+

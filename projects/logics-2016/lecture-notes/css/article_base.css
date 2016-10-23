@@ -1,0 +1,76 @@
+/* article_base.css */
+
+/* file:     publication/internal/css/article_base.css */
+/* author:   Haochen Xie                               */
+/* creation: July, 2016                                */
+
+/* article common stylesheet */
+
+main {
+  min-height: 68.1%
+}
+
+.article {
+  /* TODO */
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -epub-hyphens: auto;
+  hyphens: auto;
+}
+
+/* article header */
+
+.article-header {
+  margin-bottom: 1.4em;
+}
+
+.article-title {
+  margin-bottom: 0.6em;
+}
+
+.article-meta {
+  /* TODO */
+  text-align: center;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+.article-meta .referral {
+  display: block;
+  font-size: 0.9em;
+}
+
+.article-meta .referral span {
+  display: block;
+  line-height: 1.4em;
+}
+
+.article-meta .repo-ref:before {
+  content: "["
+}
+
+.article-meta .repo-ref:after {
+  content: "]"
+}
+
+.article-meta .repo-ref {
+  font-size: 0.8em;
+  font-family: monospace;
+}
+
+@media screen {
+  .article-meta .repo-ref {
+    color: lightgray;
+  }
+  .article-meta .repo-ref:hover {
+    color: black;
+  }
+}
+
+/* article body */
+
+.article-content {
+  /* TODO */
+}
+

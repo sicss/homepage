@@ -1,0 +1,33 @@
+/* header.css */
+
+/* file:     publication/internal/css/header.css */
+/* author:   Haochen Xie                         */
+/* creation: Oct, 2016                           */
+
+/* stylesheet of page header */
+
+.page-navigation ul {
+  text-align: center;
+}
+
+.page-navigation ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+#page-navigation-previous {
+  float: left;
+}
+
+#page-navigation-next {
+  float: right;
+}
+
+.page-navigation span :before {
+  content: "["
+}
+
+.page-navigation span :after {
+  content: "]"
+}
+

@@ -1,0 +1,106 @@
+/* common.css */
+
+/* file:     publication/internal/css/common.css */
+/* author:   Haochen Xie                         */
+/* creation: July, 2016                          */
+
+/* stylesheet of common classes and basic styling */
+
+/* common classes */
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.hr:before {
+  display: block;
+  content: "*  *  *";
+  height: 1.2em;
+}
+
+.hr:after {
+  display: block;
+  content: "*  *";
+  height: 1.2em;
+}
+
+.hr {
+  /* max-width: 60em; */
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  /* height: 1px; */
+  /* background-color: lightgray; */
+  white-space: pre;
+  text-align: center;
+  font-family: monospace;
+  width: 100%;
+  height: 2.4em;
+  color: gray;
+  font-size: 18px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .large-screen-only {
+    display: none;
+  }
+}
+
+/* basic styling */
+
+@media screen {
+  body {
+    font-size: 16px;
+  }
+}
+
+@page {
+  size: auto;
+  margin: 2cm 2cm 2cm 2cm;
+}
+
+@media print {
+  body {
+    font-size: 10pt;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+  text-align: center;
+  page-break-after: avoid;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: auto;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  transition: background-color 0.2s ease-out;
+}
+
+a:hover {
+  background-color: #d7edfa;
+}
+
+a[href^="http"], a[href^="//"] {
+  text-decoration-style: dashed;
+}
+
+a[href^="http"]:hover, a[href^="//"] {
+  background-color: #ffdbe1;
+}
+
