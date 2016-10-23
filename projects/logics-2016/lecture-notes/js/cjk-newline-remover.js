@@ -16,8 +16,6 @@ var CjkNewlineRemover;
       var oldText = node.data;
       var newText = oldText.replace(regex1, "$1$2").replace(regex2, "$1$2");
       node.data = newText;
-      console.log(oldText);
-      console.log(newText);
     } else if (node.nodeType == 1) {
       // for element node
       Array.from(node.childNodes).forEach(processNode);
