@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+    <meta name="description" content="">
+  
+
+  <title>Logics 2016 Lecture Notes Plan - Logics 2016 Lecture Notes - Sicss Society</title>
+
+  <link href="/projects/logics-2016/lecture-notes/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/table.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/list.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/common.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/header.css" rel="stylesheet"  type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/footer.css" rel="stylesheet"  type="text/css"/>
+
+  
+
+  
+
+  
+  
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/adoc.css" type="text/css">
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/coderay.css" type="text/css">
+  
+
+  
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']], displayMath: [['$-$', '$-$']]},
+  TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+
+// to fix headaches caused by Hyphenator.js
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+    data.math = data.math.replace(/\u00AD/g,"");
+  });
+});
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG" type="text/javascript"></script>
+  
+
+    <script src="/projects/logics-2016/lecture-notes/js/cjk-newline-remover.js" type="text/javascript"></script>
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  CjkNewlineRemover.processParagraphs()
+});
+    </script>
+
+</head>
+
+
+
+  <body>
+
+    
+
+
+
+    <main>
+      <link href="/projects/logics-2016/lecture-notes/css/article_base.css" rel="stylesheet" type="text/css"/>
+<script src="/projects/logics-2016/lecture-notes/js/hyphenate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll(".article").forEach(function(elem){elem.classList.add("hyphenate")});
+    document.querySelectorAll("div.title").forEach(function(elem){elem.classList.add("donthyphenate")});
+    Hyphenator.run();
+  });
+</script>
+
+<article class="article">
+
+  <header class="article-header">
+
+  <div class="page-navigation">
+    <ul>
+      <!-- <li id="page-navigation-previous"><span><a href="">Previous</a></span></li> -->
+      <li id="page-navigation-home"><span><a href="/projects/logics-2016/lecture-notes/">Home</a></span></li>
+      <!-- <li id="page-navigation-next"><span><a href="">Next</a></span></li> -->
+    </ul>
+  </div>
+
+  <h1 class="article-title">Logics 2016 Lecture Notes Plan</h1>
+
+  <p class="article-meta">
+    
+      <time datetime="2016-10-14T01:00:00+09:00" itemprop="datePublished">October, 2016</time>
+
+      <br/>
+
+      <span class="referral">
+
+	
+	<span class="revision">First Revision, First Draft</span>
+	
+
+	<span class="repo-ref">logics-2016/lecture-notes:git-74e65eb54d974245e645064b71f9521fa363027b</span>
+      </span>
+
+
+  </p>
+
+</header>
+
+<div class="article-content">
+  <div class="olist loweralpha">
+<div class="title">Part One</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>形式システムの意義</p>
+</li>
+<li>
+<p>研究対象としての形式システムとメタ論理の違い</p>
+</li>
+<li>
+<p>自然演義、数学帰納法、帰納的定義、及び帰納的定義の上の直観帰納法(構造的帰納法)</p>
+</li>
+<li>
+<p>数学記号の準備</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>集合記号(comprehension, pair, Cartesian product)</p>
+</li>
+<li>
+<p>relation</p>
+</li>
+<li>
+<p>equivalence relation</p>
+</li>
+<li>
+<p>function</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>definition, basic notation ($ f : A \rightarrow B $ &amp; $ a \mapsto b $)</p>
+</li>
+<li>
+<p>surjection, injection, bijection</p>
+</li>
+<li>
+<p>lambda notation</p>
+</li>
+<li>
+<p>function composition</p>
+</li>
+<li>
+<p>extensionality</p>
+</li>
+<li>
+<p>id, constant</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>partial function</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>軽く帰納的な定義</p>
+</li>
+<li>
+<p>軽く構造的帰納法を回す</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Part Two</div>
+<ol class="arabic">
+<li>
+<p>素朴な集合論紹介(非形式的)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>comprehension記号</p>
+</li>
+<li>
+<p>N, Z, Q, R, null</p>
+</li>
+<li>
+<p>membership, subset</p>
+</li>
+<li>
+<p>集合演算子(union, intersection, subtraction, complement, Cartesian product, arrow)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>形式言語=構文論+意味論</p>
+</li>
+<li>
+<p>構文論(BNFの紹介も含む)</p>
+</li>
+<li>
+<p>意味論(denotation semantics)</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Part Three</div>
+<ol class="arabic">
+<li>
+<p>自然言語での述語論理(universeについて言及する)</p>
+</li>
+<li>
+<p>述語論理階数について</p>
+</li>
+<li>
+<p>一階述語論理の構文論</p>
+</li>
+<li>
+<p>束縛変数について</p>
+</li>
+<li>
+<p>一階述語論理の意味論</p>
+</li>
+<li>
+<p>一階述語論理の意味論(集合的解釈)</p>
+</li>
+<li>
+<p>一階述語論理の基礎的な事柄</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>negationの意味論的含意</p>
+</li>
+<li>
+<p>equivalenceの意味論的含意</p>
+</li>
+<li>
+<p>二重否定の自己消去</p>
+</li>
+<li>
+<p>De Morgan (量化子、連・選言)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Part Four</div>
+<ol class="arabic">
+<li>
+<p>証明論の意義</p>
+</li>
+<li>
+<p>証明論が多数あって、スタイルが大分違う</p>
+</li>
+<li>
+<p>reference rule notationの紹介</p>
+</li>
+<li>
+<p>judgment notationの紹介</p>
+</li>
+<li>
+<p>証明木の紹介</p>
+</li>
+<li>
+<p>自然演義のルールとそれぞれの意味</p>
+</li>
+<li>
+<p>構成的論理と背理法</p>
+</li>
+<li>
+<p>証明の例と証明木の書き方</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Part Five</div>
+<ol class="arabic">
+<li>
+<p>正しさとモデルの存在性</p>
+</li>
+<li>
+<p>証明可能とモデルの存在性(|-と||-の違いを強調)</p>
+</li>
+<li>
+<p>健全性の言明</p>
+</li>
+<li>
+<p>Characterization problemと完全性の言明</p>
+</li>
+<li>
+<p>健全性と完全性の因果葛藤</p>
+</li>
+<li>
+<p>健全性の証明</p>
+</li>
+<li>
+<p>完全性の証明</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>consistency</p>
+</li>
+<li>
+<p>strategy</p>
+</li>
+<li>
+<p>Henkin constructionと極大矛盾集合の提示</p>
+</li>
+<li>
+<p>証明の流れ</p>
+</li>
+<li>
+<p>同値関係と商集合</p>
+</li>
+<li>
+<p>Henkin theoryと極大矛盾集合の詳細</p>
+</li>
+<li>
+<p>完全性定理の証明</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Compactness theorem</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Part Six</div>
+<ol class="arabic">
+<li>
+<p>Inductive Definitionの形式化とInduction Principle</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Connection with Completeness Theorem</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Kleene&#8217;s recursion theorem</p>
+</li>
+<li>
+<p>Gödel&#8217;s incompleteness theorem(?)</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Next Seminar (Proofs and Types)</div>
+<ol class="arabic">
+<li>
+<p>直観主義論理</p>
+</li>
+<li>
+<p>simply typed lambda calculusの定義</p>
+</li>
+<li>
+<p>lambda calculusで軽くプログラミング</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>boolean, pair</p>
+</li>
+<li>
+<p>Y combinator &#8592; 軽いかどうかは謎だが</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Curry-Howard isomorphism</p>
+</li>
+<li>
+<p>Terms in functional programming language as proof</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+
+</article>
+
+
+
+    </main>
+
+    <footer>
+
+  <div class="hr"></div>
+
+  <div class="copyright-notice">
+
+    <p>
+      Copyright &copy; 2016 Sicss Society. <br/>
+      All rights reserved.
+    </p>
+
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> <br/>
+      This work is licensed under a <br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+	International License</a>.
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+  </body>
+
+</html>
+
