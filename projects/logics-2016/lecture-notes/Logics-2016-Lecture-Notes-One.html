@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+    <meta name="description" content="">
+  
+
+  <title>Logics 2016 Lecture Notes One - Sicss Society</title>
+
+  <link href="/projects/logics-2016/lecture-notes/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/table.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/list.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/common.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/header.css" rel="stylesheet"  type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/footer.css" rel="stylesheet"  type="text/css"/>
+
+  
+
+  
+
+  
+  
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/adoc.css" type="text/css">
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/coderay.css" type="text/css">
+  
+
+  
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']], displayMath: [['$-$', '$-$']]},
+  TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+
+// to fix headaches caused by Hyphenator.js
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+    data.math = data.math.replace(/\u00AD/g,"");
+  });
+});
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG" type="text/javascript"></script>
+  
+
+    <script src="/projects/logics-2016/lecture-notes/js/cjk-newline-remover.js" type="text/javascript"></script>
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  CjkNewlineRemover.processParagraphs()
+});
+    </script>
+
+</head>
+
+
+
+  <body>
+
+    
+
+
+
+    <main>
+      <link href="/projects/logics-2016/lecture-notes/css/article_base.css" rel="stylesheet" type="text/css"/>
+<script src="/projects/logics-2016/lecture-notes/js/hyphenate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll(".article").forEach(function(elem){elem.classList.add("hyphenate")});
+    document.querySelectorAll("div.title").forEach(function(elem){elem.classList.add("donthyphenate")});
+    Hyphenator.run();
+  });
+</script>
+
+<article class="article">
+
+  <header class="article-header">
+
+  <div class="page-navigation">
+    <ul>
+      <!-- <li id="page-navigation-previous"><span><a href="">Previous</a></span></li> -->
+      <li id="page-navigation-home"><span><a href="/projects/logics-2016/lecture-notes/">Contents</a></span></li>
+      <!-- <li id="page-navigation-next"><span><a href="">Next</a></span></li> -->
+    </ul>
+  </div>
+
+  <h1 class="article-title">Logics 2016 Lecture Notes One</h1>
+
+  <p class="article-meta">
+    
+      <time datetime="2016-10-17T00:00:00+09:00" itemprop="datePublished">October, 2016</time>
+
+      <br/>
+
+      
+
+      <span class="referral">
+
+	
+	<span class="revision">First Revision, First Draft</span>
+	
+
+	<span class="repo-ref">logics-2016/lecture-notes:git-0a6f68f510a035ff819a98799e5e2e6f1bc2bd20</span>
+	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-One">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-One</a></span>
+      </span>
+
+
+  </p>
+
+</header>
+
+<div class="article-content">
+  <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph preface">
+<div class="title">Preamble</div>
+<p>This article is part of the lecture notes series authored for Sicss Logics Seminar 2016. This
+article covers the introduction part (Part 1) of the seminar&#8217;s agenda.</p>
+</div>
+<div class="paragraph preface">
+<div class="title">Abstract</div>
+<p>The first article of the lecture notes series cover the significance of formal logic systems, a
+general and informal introduction to formal systems, introduction to the mathematical devices we are
+going to use to study the formal systems. More specifically, we are going to introduce the notations
+of sets, relations, functions, and devote significant space for the introduction of inductive
+definitions and induction principles.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preface">Preface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The topic of this seminar, and thus this lecture notes series is the mathematical device of first
+order logic. Through this seminar, participants are going to be introduced with it, study several
+critical properties of it, and gain skills in formal reasoning in mathematics in general. This
+seminar, also this lecture notes series, assumes no preliminary background in mathematics other than
+the familiarities of the concepts of set and function, although even these concepts will be
+reintroduced. The participants are, however, expected to be passionate about this topic, and
+actively participate in seminars and its preparations. This seminar introduces a quite non-trivial
+intellectual device which is highly possible totally new to the participants, thus plenty of mental
+struggles are expected. But nevertheless, first order logic is one of the most widely employed
+devices in mathematics and it is almost as strong to encode all reasonings humankind could perform,
+mathematical or not. So if you survive the seminar, you will gain a lot.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</article>
+
+
+
+    </main>
+
+    <footer>
+
+  <div class="hr"></div>
+
+  <div class="copyright-notice">
+
+    <p>
+      Copyright &copy; 2016 Sicss Society. <br/>
+      All rights reserved.
+    </p>
+
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> <br/>
+      This work is licensed under a <br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+	International License</a>.
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+  </body>
+
+</html>
+
