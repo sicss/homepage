@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, Third Draft</span>
+	<span class="revision">Version One, Fourth Draft</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-5ec11e4a319511db4cd90738d652a602762144c7</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-bb9be222b6d2b630efbf2d424db6a6e1c049a94e</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five</a></span>
       </span>
 
@@ -334,7 +334,7 @@ $-$</p>
 subscription $ _{t} $ or $ _{\phi} $.</p>
 </div>
 <div class="paragraph">
-<p>(maybe add some examples)</p>
+<p>(examples and exercises to be added)</p>
 </div>
 </div>
 </div>
@@ -342,6 +342,27 @@ subscription $ _{t} $ or $ _{\phi} $.</p>
 <div class="sect1">
 <h2 id="section-3-2-substitution">Section 3.2. Substitution</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The main manipulation on variables is substitution. Substitution is an action performed on an
+expression, to systematically rewrite the occurrences of some variable to some another expression.
+Recall the example in the last section, we evaluated the expression within a context by substitute
+all free variable occurrences to their values in the context. Actually, the function applications in
+both the previous example and the example at the beginning of this chapter are also accomplished
+with variable substitution.</p>
+</div>
+<div class="paragraph">
+<p>The strategy for precisely formulating variable substitution is very straightforward with the
+concept of boundness: to substitute a variable, say $x$, in an expression, say $e$, to another
+expression, say $s$, we replace every free occurrence of $x$ in $e$ with $s$. To apply this
+strategy, a common approach is to traversal the expression from the begin to the end, replacing all
+occurrences of the variable being substituted but when seeing a binder whose binding variable is the
+same as the one being substituted, skip the corresponding binding variable and its scope. One common
+notation for substitution, reusing the metavariables in the first sentence in this paragraph, is
+$e[x\mapsto s]$, and it is read as "substitute $x$ with $s$ in $e$". Knowing the strategy, the
+approach, and the notations, we could then formulate variable substitution for <strong>Pred<sup>1</sup></strong> as below.
+Note that in <strong>Pred<sup>1</sup></strong>, binders are exactly $\funivq$ and $\fexq$. "${-}$" is used as placeholder
+and $y$ is used as metavariable for $\mathbf{Var}$ just like $x$.</p>
+</div>
 <div class="paragraph">
 <p>$-$
 \newcommand\ph{{-}}
@@ -378,7 +399,11 @@ $-$
 $-$</p>
 </div>
 <div class="paragraph">
-<p>(more to be added)</p>
+<p>As for the case of $fv(\dots)$, we usually abuse the notation and omit the subscription $ _{t} $ or
+$ _{\phi} $ and write $e[x\mapsto s]$ directly instead.</p>
+</div>
+<div class="paragraph">
+<p>(exercises to be added)</p>
 </div>
 </div>
 </div>
