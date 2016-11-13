@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, First Draft, First Revision</span>
+	<span class="revision">Version One, Second Draft</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-46d7a9754878e4317cf4cbb97c1bd88ae53e5e9b</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-855bbbc99216d932358ce55eeb47424479e92cca</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five</a></span>
       </span>
 
@@ -219,8 +219,8 @@ $-$</p>
 <p>(maybe more discussion to be added)</p>
 </div>
 <div class="paragraph">
-<p><strong>Exercise 1:</strong> convert the BNFs above to <em>inference rules</em> style of inductive definitions, and write down
-the induction principle for them.</p>
+<p><strong>Exercise 1:</strong> convert all the three BNFs above to <em>inference rules</em> style of inductive definitions,
+and write down the induction principle for them.</p>
 </div>
 <div class="paragraph">
 <p><strong>Exercise 2:</strong> define functions $\text{size} : \mathbf{Form} \rightarrow \nat$ and $\text{depth} :
@@ -234,10 +234,107 @@ principle for $\mathbf{Form}$, or structural induction on terms directly.</p>
 <h2 id="chapter-3-variables">Chapter 3. Variables</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the last two clauses of the BNF for $\mathbf{Form}$, namely $\funivq x \phi$ and $\fexq x \phi$,</p>
+<p>Note that in the last two clauses of the BNF for $\mathbf{Form}$, namely $\funivq x \phi$ and $\fexq
+x \phi$, there are occurrences of <strong>variables</strong>, namely the $x$'s. Variables in mathematics appears
+basically everywhere, such as in functions, in propositions, etc. and are also handled intuitively.
+For example to apply 5 to the function $\lambda x. (x - 3)(x^2 + 2)$, we firstly replace all $x$'s
+in the body of the function to get $(5 - 3) (5^2 + 2)$ then perform ordinary arithmetic to get the
+final result, which is 54 in this case. Since variable is nowadays a standard device taught from
+elementary school level math classes, intuitive handling is usually sufficient in most cases.
+However, in formal systems involving variables such as the first order logic, it must be very clear
+(in the sense of mathematical preciseness) how variables are treated, which is the topic of this
+chapter.</p>
+</div>
+<div class="paragraph">
+<p>In this chapter, we are going to study the current de facto standard formal treatment for variables,
+where "treatment" means the interpretation and manipulation of variables in a formal language. For
+interpretation, we are going to introduce the concepts of <strong>scope</strong> and <strong>boundness</strong>, and for
+manipulation, we are going to define the action of substituting a variable to something else in an
+expression, which is usually referred to as <strong>variable substitution</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="section-3-1-scope-boundness">Section 3.1. Scope &amp; Boundness</h3>
+<div class="paragraph">
+<p>One could easily see that, in the expression $ ( (\lambda x. x^2 + x + 1) (x + 2) ) + x $, the $x$'s
+are not referring to the same thing. Since there are too many of them, let us number those
+<strong>occurrences</strong> of $x$: $ ( (\lambda x_1. x_2^2 + x_3 + 1) (x_4 + 2) ) + x_5 $. Intuitively, we could
+see that $x_1$, $x_2$, and $x_3$ are referring to the number, not yet known at this point though;
+and $x_4$ and $x_5$ are referring to another number, also not yet known. If in a <strong>context</strong> where
+$x = 5$, the expression indeed means $ ( (\lambda x. x^2 + x + 1) (5 + 2) ) + 5 $ which in turn
+means $ ( (\lambda x. x^2 + x + 1) (7) ) + 5 $, which in turn means $ (7^2 + 7 + 1) + 5 $, which we
+could calculate as usual and get 62 as the result. Here, obviously, those $x$'s with different
+subscripts should not be understood as different variables as in usual occasions: they are all the
+same variable $x$ and the subscripts are added only to indicate occurrences at specific positions.</p>
+</div>
+<div class="paragraph">
+<p>Why in the previous example those two groups of occurrences of the same variable refer to two
+different number is also evident to us: in the subexpression $ (\lambda x_1. x_2^2 + x_3 + 1) $, we
+declare a new variable $x$, which governs the rest of the occurrences of $x$ in this subexpression
+and separate them from those occurrences of $x$'s in the rest of the expression. In logics and
+computer science, this action of "declaring" a new variable is called <strong>variable binding</strong>. The
+occurrence $x_1$, the one indicating which variable the action is binding, is called the <strong>binding
+occurrence</strong>. The occurrences $x_2$ and $x_3$ in the subexpression are then called <strong>bound
+occurrences</strong>. The $\lambda$ here is called a <strong>binder</strong>, since it indicates that the variable
+occurrence immediately following it is a binding occurrence. The effect of the action of variable
+binding is always limited, as for in the previous example, $x_4$ and $x_5$ is not bound by $x_1$;
+and the exact extension of such effect is called the <strong>scope</strong>. In the previous example, the <strong>scope</strong>
+of the binding occurrence $x_1$ is exactly the subexpression $x_2^2 + x_3 + 1$; note that the binder
+and the binding occurrence are not included in the scope.</p>
+</div>
+<div class="paragraph">
+<p>We introduced binding and bound <em>occurrences</em> in the last paragraph, but those concepts are usually
+too precise to be very useful. A coarser concept is the <strong>bound variables</strong>, which simply means the
+variable, not the occurrence that is bound in a specific expression, i.e. it has binding (not
+necessarily bound) occurrences in the expression. Taking this naming, we quite often abuse
+terminologies and call an occurrence of some variable "bound" if it is either a binding occurrence
+or a bound occurrence. In the opposite, we call an occurrence "free" if it is neither a binding
+occurrence nor a bound occurrence. So in the previous example, $x_1, x_2, x_3$ are bound and $x_4,
+x_5$ are free.</p>
+</div>
+<div class="paragraph">
+<p>As bound variables, we also have a concept called <strong>free variable</strong>. A free variable in an expression
+is a variable that has at least one occurrence in the expression, but all of those occurrences are
+free. The concept of free variable is very important in the sense that the concept often occurs in
+inductive definitions. We will later see that we require some variables to be free in inductive
+definitions when specifying the proof theory of <strong>Pred<sup>1</sup></strong>. So let us formulate precisely what the
+free variables are in a formula in the language of <strong>Pred<sup>1</sup></strong> as below.</p>
+</div>
+<div class="paragraph">
+<p>$-$
+\newcommand\pow[1]{\mathscr{P}(#1)}
+\newcommand\null\varnothing
+\newcommand\fvt{fv_t}
+\newcommand\fvf{fv_\phi}
+\begin{align*}
+  \fvt : \mathbf{Term} &amp; \rightarrow \pow{\mathbf{Var}} \\
+  \fvf : \mathbf{Form} &amp; \rightarrow \pow{\mathbf{Var}}
+\end{align*}
+$-$
+$-$
+\begin{align*}
+  \fvt(x) &amp; = \{ x \} \\
+  \fvt(f(t_1, \dots, t_k)) &amp; = \bigcup\limits_{i=1}^k \fvt (t_i) \\
+  \fvf(\bot) &amp; = \null \\
+  \fvf(t_1 = t_2) &amp; = \fvt(t_1) \cup \fvt(t_2) \\
+  \fvf(P(t_1, \dots, t_k)) &amp; = \bigcup\limits_{i=1}^k \fvt (t_i) \\
+  \fvf(\phi_1 \fand \phi_2) &amp; = \fvf(\phi_1) \cup \fvf(\phi_2) \\
+  \fvf(\phi_1 \for \phi_2) &amp; = \fvf(\phi_1) \cup \fvf(\phi_2) \\
+  \fvf(\phi_1 \fentails \phi_2) &amp; = \fvf(\phi_1) \cup \fvf(\phi_2) \\
+  \fvf(\funivq x \phi) &amp; = \fvf(\phi) \setminus \{ x \} \\
+  \fvf(\fexq x \phi) &amp; = \fvf(\phi) \setminus \{ x \}
+\end{align*}
+$-$</p>
+</div>
+<div class="paragraph">
+<p>Since usually we know which one we mean by $fv(\dots)$, we usually abuse the notation and omit the
+subscription $ _{t} $ or $ _{\phi} $.</p>
+</div>
+<div class="paragraph">
+<p>(maybe add some examples)</p>
 </div>
 <div class="paragraph">
 <p>(to be added)</p>
+</div>
 </div>
 </div>
 </div>
