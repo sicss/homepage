@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, Fourth Draft</span>
+	<span class="revision">Version One, Fifth Draft</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-bb9be222b6d2b630efbf2d424db6a6e1c049a94e</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-a3186527b7cb12b997057513c455ff9ebffb99bf</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five</a></span>
       </span>
 
@@ -334,7 +334,7 @@ $-$</p>
 subscription $ _{t} $ or $ _{\phi} $.</p>
 </div>
 <div class="paragraph">
-<p>(examples and exercises to be added)</p>
+<p>(maybe some examples to be added)</p>
 </div>
 </div>
 </div>
@@ -403,7 +403,35 @@ $-$</p>
 $ _{\phi} $ and write $e[x\mapsto s]$ directly instead.</p>
 </div>
 <div class="paragraph">
-<p>(exercises to be added)</p>
+<p><strong>Exercise 3.1</strong> We introduced the lambda notation for expressing functions. There is a famous and
+important formalization called <strong>lambda calculus</strong> that specifies the formal language and formal
+semantics for such expressions. The syntax of lambda calculus is given below.</p>
+</div>
+<div class="paragraph">
+<p>$-$
+\begin{align*}
+  \bnfhd{Var}{x} &amp; x_i \quad \text{(for $i \in \nat$)} \\
+  \bnfhd{Term}{t} &amp; x \bnfalt \lambda x . t \bnfalt t \; t
+\end{align*}
+$-$</p>
+</div>
+<div class="paragraph">
+<p>The first clause is just a variable (and yes, it is free!); the second clause of $\mathbf{Term}$ is
+called <strong>abstraction</strong>, and it allows one to construct a function; the third clause is called
+<strong>application</strong>, and it allows one to apply an argument (the second term) to a function (the first
+term). Your task is to take Section 3.1 and Section 3.2 as reference and</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>formulate the function $fv : \mathbf{Term} \rightarrow \pow{\mathbf{Var}}$ for specifying the
+set of free variables in a term and</p>
+</li>
+<li>
+<p>formulate the function $\ph[\ph\mapsto\ph] : \mathbf{Term} \rightarrow \mathbf{Var} \rightarrow
+\mathbf{Term} \rightarrow \mathbf{Term}$ for specifying the substitution.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

@@ -92,6 +92,12 @@ a {
   transition: background-color 0.2s ease-out;
 }
 
+@media print {
+  .referral a {
+    text-decoration: none;
+  }
+}
+
 a:hover {
   background-color: #d7edfa;
 }
