@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, Second Draft, First Revision</span>
+	<span class="revision">Version One, Third Draft</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-a2541588159d940d4c536b33596682ed6684ad56</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-5ec11e4a319511db4cd90738d652a602762144c7</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Five</a></span>
       </span>
 
@@ -314,6 +314,10 @@ $-$
 \begin{align*}
   \fvt(x) &amp; = \{ x \} \\
   \fvt(f(t_1, \dots, t_k)) &amp; = \bigcup\limits_{i=1}^k \fvt (t_i) \\
+\end{align*}
+$-$
+$-$
+\begin{align*}
   \fvf(\bot) &amp; = \null \\
   \fvf(t_1 = t_2) &amp; = \fvt(t_1) \cup \fvt(t_2) \\
   \fvf(P(t_1, \dots, t_k)) &amp; = \bigcup\limits_{i=1}^k \fvt (t_i) \\
@@ -339,7 +343,42 @@ subscription $ _{t} $ or $ _{\phi} $.</p>
 <h2 id="section-3-2-substitution">Section 3.2. Substitution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(to be added)</p>
+<p>$-$
+\newcommand\ph{{-}}
+\begin{align*}
+  \ph[\ph\mapsto\ph] _t : \mathbf{Term} \rightarrow \mathbf{Var} \rightarrow \mathbf{Term}
+    \rightarrow \mathbf{Term} \\
+  \ph[\ph\mapsto\ph] _\phi : \mathbf{Form} \rightarrow \mathbf{Var} \rightarrow \mathbf{Term}
+    \rightarrow \mathbf{Form}
+\end{align*}
+$-$
+$-$
+\begin{align*}
+  x &amp; [x \mapsto t] _t = t \\
+  y &amp; [x \mapsto t] _t = y \\
+  f(t_1, \dots, t_k) &amp; [x \mapsto t] _t = f(t_1[x \mapsto t] _t, \dots, t_k[x \mapsto t] _t)
+\end{align*}
+$-$
+$-$
+\begin{align*}
+  \bot &amp; [x \mapsto t] _\phi = \bot \\
+  (t _1 = t _2) &amp; [x \mapsto t] _\phi = (t _1[x \mapsto t] _t) = (t _2[x \mapsto t] _t) \\
+  P(t_1, \dots, t_k) &amp; [x \mapsto t] _\phi = P(t_1[x \mapsto t] _t, \dots, t_k[x \mapsto t] _t) \\
+  (\phi _1 \fand \phi _2) &amp; [x \mapsto t] _\phi = (\phi _1[x \mapsto t] _\phi) \fand (\phi _2[x
+    \mapsto t] _\phi) \\
+  (\phi _1 \for \phi _2) &amp; [x \mapsto t] _\phi = (\phi _1[x \mapsto t] _\phi) \for (\phi _2[x
+    \mapsto t] _\phi) \\
+  (\phi _1 \fentails \phi _2) &amp; [x \mapsto t] _\phi = (\phi _1[x \mapsto t] _\phi) \fentails (\phi _2[x
+    \mapsto t] _\phi) \\
+  (\funivq x \phi) &amp; [x \mapsto t] _\phi = \funivq x \phi \\
+  (\funivq y \phi) &amp; [x \mapsto t] _\phi = \funivq y (\phi[x \mapsto t] _\phi) \\
+  (\fexq x \phi) &amp; [x \mapsto t] _\phi = \fexq x \phi \\
+  (\fexq y \phi) &amp; [x \mapsto t] _\phi = \fexq y (\phi[x \mapsto t] _\phi) \\
+\end{align*}
+$-$</p>
+</div>
+<div class="paragraph">
+<p>(more to be added)</p>
 </div>
 </div>
 </div>
