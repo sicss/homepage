@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+    <meta name="description" content="">
+  
+
+  <title>Logics 2016 Lecture Notes Seven (Part II: 5) - Sicss Society</title>
+
+  <link href="/projects/logics-2016/lecture-notes/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/table.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/list.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/common.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/header.css" rel="stylesheet"  type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/footer.css" rel="stylesheet"  type="text/css"/>
+
+  
+
+  
+
+  
+  
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/adoc.css" type="text/css">
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/coderay.css" type="text/css">
+  
+
+  
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']], displayMath: [['$-$', '$-$']]},
+  TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+
+// to fix headaches caused by Hyphenator.js
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+    data.math = data.math.replace(/\u00AD/g,"");
+  });
+});
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG" type="text/javascript"></script>
+  
+
+    <script src="/projects/logics-2016/lecture-notes/js/cjk-newline-remover.js" type="text/javascript"></script>
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  CjkNewlineRemover.processParagraphs()
+});
+    </script>
+
+</head>
+
+
+
+  <body>
+
+    
+
+
+
+    <main>
+      <link href="/projects/logics-2016/lecture-notes/css/article_base.css" rel="stylesheet" type="text/css"/>
+<script src="/projects/logics-2016/lecture-notes/js/hyphenate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll(".article").forEach(function(elem){elem.classList.add("hyphenate")});
+    document.querySelectorAll("div.title").forEach(function(elem){elem.classList.add("donthyphenate")});
+    Hyphenator.run();
+  });
+</script>
+
+<article class="article">
+
+  <header class="article-header">
+
+  <div class="page-navigation">
+    <ul>
+      <!-- <li id="page-navigation-previous"><span><a href="">Previous</a></span></li> -->
+      <li id="page-navigation-home"><span><a href="/projects/logics-2016/lecture-notes/">Contents</a></span></li>
+      <!-- <li id="page-navigation-next"><span><a href="">Next</a></span></li> -->
+    </ul>
+  </div>
+
+  <h1 class="article-title">Logics 2016 Lecture Notes Seven (Part II: 5)</h1>
+
+  <p class="article-meta">
+    
+      <time datetime="2016-11-26T00:00:00+09:00" itemprop="datePublished">November, 2016</time>
+
+      <br/>
+
+      
+
+      <span class="referral">
+
+	
+	<span class="revision">Version One, First Draft</span>
+	
+
+	<span class="repo-ref">logics-2016/lecture-notes:git-d59cadbbcddc67c8e1a1fe887f6105aa7863061d</span>
+	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Seven">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Seven</a></span>
+      </span>
+
+
+  </p>
+
+</header>
+
+<div class="article-content">
+  <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph preface">
+<div class="title">Preamble</div>
+<p>This article is part of the lecture notes series authored for Sicss Logics Seminar 2016. This
+article covers Part II: <strong>5. Semantics of <em>Pred<sup>1</sup></em></strong>. This note is unfinished.</p>
+</div>
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+	  var TEXDEFS = MathJax.InputJax.TeX.Definitions;
+	  TEXDEFS.delimiter["\\llbracket"] = "27E6";
+	  TEXDEFS.delimiter["\\rrbracket"] = "27E7";
+	});
+
+	MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+	  var HTMLCSS = MathJax.OutputJax["HTML-CSS"],
+	      DELIMITERS = HTMLCSS.FONTDATA.DELIMITERS;
+
+	  var GENERAL = "STIXGeneral",
+	      SIZE1   = "STIXSizeOneSym",
+	      SIZE2   = "STIXSizeTwoSym",
+	      SIZE3   = "STIXSizeThreeSym",
+	      SIZE4   = "STIXSizeFourSym";
+
+	  if (HTMLCSS.fontInUse === "STIX") {
+	    // left white square bracket
+	    DELIMITERS[0x27E6] = {
+	      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+	      stretch: {top:[0x2553,GENERAL], ext:[0x2551,GENERAL], bot:[0x2559,GENERAL]}
+	    };
+	    // right white square bracket
+	    DELIMITERS[0x27E7] = {
+	      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+	      stretch: {top:[0x2556,GENERAL], ext:[0x2551,GENERAL], bot:[0x255C,GENERAL]}
+	    };
+	  }
+	});
+	</script>
+<div style="display:block">
+$-$
+\newcommand\tuple[1]{\langle #1 \rangle}
+\newcommand\intpr[1]{\llbracket #1 \rrbracket}
+%\newcommand\intprx[1]{\llbracket #1 \rrbracket_{x_1,\dots,x_n}}
+\newcommand\intprx[1]{\llbracket #1 \rrbracket_{x_{1\dots n}}}
+\newcommand\intprxn[2]{\llbracket #2 \rrbracket_{x_1,\dots,x_{#1}}}
+\newcommand\fun[2]{\lambda{#1}. #2}
+\newcommand\comprh[2]{\{#1\;\;|\;\;#2\}}
+$-$
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="chapter-5-semantics-of-em-pred-sup-1-sup-em">Chapter 5. Semantics of <em>Pred<sup>1</sup></em></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="structure-for-em-pred-sup-1-sup-em">Structure for <em>Pred<sup>1</sup></em></h3>
+<div class="paragraph">
+<p>$\mathscr{A}$ is a structure for a first order theory $\mathcal{L}$ whose function symbol set being
+$\mathfrak{P}$ and predicate symbol set being $\mathfrak{F}$ if it consists of</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>set $U$, referred as <strong>the universe</strong></p>
+</li>
+<li>
+<p>for each $P$ in $\mathfrak{P}_k$, a subset $\intpr{P} \subseteq U^k$, referred as
+the <strong>interpretation of $P$</strong></p>
+</li>
+<li>
+<p>for each $f$ in $\mathfrak{F}_k$, a function $\intpr{f} : U^k \rightarrow U$,
+referred as the <strong>interpretation of $f$</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Recall that there are three non-inductive clauses in the BNF definition of $\mathbf{Form}$, namely
+$\bot$, $t = t$, and $P(t_1,\dots,t_k)$. If we think about it a little bit more, we could see that
+the first two clauses are just instances of the third, i.e. $\bot$ and $t = t$ are just two
+predicative clauses where we could treat $\bot$ as a nullary (0-ary) predicate symbol and $=$ as a
+binary predicate symbol! The reason we include these two clauses in the language of <strong>Pred<sup>1</sup></strong> is
+that these two predicate symbols are so fundamental in first order theories and their meanings are
+clearly fixed for any theory. Indeed, if we choose not to include these two clauses in the language,
+we have to modify our definition for predicate symbol set to require the inclusion of predicate
+symbols "$\bot$" and "$=$"; then also modify the definition for structure to fix $\intpr{\bot}$ to
+be $\emptyset$ (the empty set) and $\intpr{=}$ to be $\{ \tuple{x,x} | x \in U \}$ for the obvious
+reason.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="semantics-of-em-pred-sup-1-sup-em">Semantics of <em>Pred<sup>1</sup></em></h3>
+<div class="paragraph">
+<p>Given the definition of structure, we can now formulate the semantics of <strong>Pred<sup>1</sup></strong>. Recall that by
+saying "the semantics" of a formal language, we mean the assignment of a meaning to each sentence of
+the language, which in turn means, deciding the interpretation for the language. Here, for
+<strong>Pred<sup>1</sup></strong>, we have formulas as the sentences of the language, so in giving its semantics, we have to
+determine precisely the interpretation for each formula. But in order to achieve that, we firstly
+need to also give the interpretation for each term, since terms are an integrated part of most
+formulas.</p>
+</div>
+<div class="paragraph">
+<p>With a fixed structure, we can <strong>evaluate</strong> a term if it is closed (i.e. without free variable)
+according to the meaning of each function symbol to obtain an element in the universe of the
+structure. We write the evaluation of a term $t$ as $\intpr{t}$ (we also use the double bracket
+notation for the interpretation of formulas), and call the result of the evaluation the value of
+$t$. With variables presented, however, a term $t$ cannot simply be evaluated to a single
+value. Nevertheless, if each of the variables in a term $t$ are assigned with a particular element
+in the universe, the value of the term is determined. A particular assignment of elements in the
+universe to certain variables is called a <strong>valuation</strong>. In this sense, we can treat a function $U^k
+\rightarrow U$ the interpretation of a term with k variables, where $U$ being the
+universe. Therefore, we could give the inductive definition for the interpretation of terms in as
+below.</p>
+</div>
+<div class="paragraph">
+<p>$-$
+\begin{align*}
+  \intprx{x_i} &amp; = \fun{\tuple{a_1,\dots,a_n}}{a_i} \\
+  \intprx{f(t_1, \dots, t_k)} &amp;= \fun{\tuple{a_1,\dots,a_n}}{ \\ &amp; \quad\quad\quad \intpr{f}(
+    \intprx{t_1}(\tuple{a_1,\dots,a_n}), \dots, \intprx{t_k}(\tuple{a_1,\dots,a_n}))}
+\end{align*}
+$-$</p>
+</div>
+<div class="paragraph">
+<p>Here, the $x_{1 \dots n}$ is a shorthand for $x_1, \dots, x_n$, and it denotes the correspondence of
+variables to elements for an assignment. Note that even if a variable is not occurring in a term, we
+could treat it as an variable of the term: the assignment of its value doesn&#8217;t matter though.</p>
+</div>
+<div class="paragraph">
+<p>Let us then consider the interpretation of a formula. With a structure in hand, just as for terms,
+we cannot simply evaluate a formula (i.e. to tell whether the formula is true or false) if it
+contains free variables. And our treatment for the variables is somewhat similar with the treatment
+in the case of terms. The difference is that, instead of a function, we recognize the set of
+valuations which make a formula evaluate to true as the interpretation of that formula. Given this
+strategy, we can formulate the idea as an inductive definition as below.</p>
+</div>
+<div class="paragraph">
+<p>$-$
+\begin{align*}
+  \intprx{\bot} &amp; = \emptyset \\
+  \intprx{t_1=t_2} &amp;= \comprh{ \tuple{a_1, \dots, a_n} \in U^n}{\\ &amp; \quad\quad\quad
+    \intprx{t_1}(\tuple{a_1, \dots, a_n}) = \intprx{t_2}(\tuple{a_1, \dots, a_n}) } \\
+  \intprx{P(t_1, \dots, t_k)} &amp;= \comprh{ \tuple{a_1, \dots, a_n}  \in U^n}{\\ &amp; \quad\quad\quad
+    \tuple{\intprx{t_1}(\tuple{a_1, \dots, a_n}), \dots, \intprx{t_1}(\tuple{a_1, \dots, a_n})}
+    \in \intpr{P}} \\
+  \intprx{\phi _1 \wedge \phi _2} &amp; = (\intprx{\phi _1}) \cap (\intprx{\phi _2}) \\
+  \intprx{\phi _1 \vee \phi _2} &amp; = (\intprx{\phi _1}) \cup (\intprx{\phi _2}) \\
+  \intprx{\phi _1 \rightarrow \phi _2} &amp; =
+    (U^n \smallsetminus \intprx{\phi _1}) \cup (\intprx{\phi _2}) \\
+  \intprx{\forall x \phi} &amp; = \comprh{ \tuple{a_1, \dots, a_n} \in U^n }{\\ &amp; \quad\quad\quad
+    \intpr{\phi[x_1 \mapsto a_1, \dots, x_n \mapsto a_n]}_x = U } \\
+  \intprx{\exists x \phi} &amp; = \comprh{ \tuple{a_1, \dots, a_n} \in U^n }{\\ &amp; \quad\quad\quad
+    \intpr{\phi[x_1 \mapsto a_1, \dots, x_n \mapsto a_n]}_x \neq \emptyset } \\
+\end{align*}
+$-$</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validity">Validity</h3>
+<div class="paragraph">
+<p>We say that a formula $\phi$ is <strong>valid</strong> in a structure $\mathscr{A}$ if $\intprx{\phi} = U^n$ where
+$ fv(\phi) \subseteq \{ x_1, \dots, x_n \} $ in a certain structure $\mathscr{A}$, which means that
+$\phi$ is true regardless of the assignment of the variables. We sometime write $\intpr{\phi} =
+\top$ if $\phi$ is valid in $\mathscr{A}$ and $\mathscr{A}$ is clear from the context. Conversely,
+we sometime write $\intpr{\phi} = \bot$ if $\intprx{\phi} = \emptyset$ where $fv(\phi) \subseteq
+\{x_1, \dots, x_n\}$ and $\mathscr{A}$ is clear from the context. Note that a formula may be valid
+in one structure but invalid in another structure.</p>
+</div>
+<div class="paragraph">
+<p>When $\phi$ is valid in $\mathscr{A}$, we also say that $\mathscr{A}$ is a <strong>model</strong> of $\phi$ and
+write $\mathscr{A} \models \phi$. Although according to our definition of validity, $\phi$ could
+contains free variables, this notation is conventionally only used when $\phi$ is closed. This
+notation could also be extended to a set of formulas, where $\mathscr{A} \models \Phi$ means that
+for all $\phi \in \Phi$, $\mathscr{A} \models \phi$. Another very common and useful (but admittedly
+tricky for newcomers) notation is $\Phi \models \psi$, which means for all models $\mathscr{A}$ such
+that $\mathscr{A} \models \Phi$, $\mathscr{A} \models \psi$. Lastly, as a shorthand, we often write
+$\models \phi$ for $\emptyset \models \phi$, which means that $\phi$ is valid in any structure.</p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise 2.5.1:</strong> Prove that <em>in any theory and under any structure of that theory, for any formula
+ $\phi$, $\intprx{\phi \rightarrow \bot} = U^n \setminus \intprx{\phi}$.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise 2.5.2</strong> Prove that <em>in any theory and under any structure of that theory, for any formula
+ $\phi$ s.t. $x \in fv(\phi)$, $\intpr{\phi} = \top $ iff $ \intpr{\forall{x}\phi} = \top$.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise 2.5.3</strong> Prove that <em>in any theory, for any formula $\phi$ and $\psi$, $\models \phi
+ \leftrightarrow \psi$ iff under any structure of that theory, $\intpr{\phi} = \intpr{\psi}$.</em> Hint:
+ $\phi \leftrightarrow \psi$ is defined to be $\phi \rightarrow \psi \wedge \psi \rightarrow \phi$.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</article>
+
+
+
+    </main>
+
+    <footer>
+
+  <div class="hr"></div>
+
+  <div class="copyright-notice">
+
+    <p>
+      Copyright &copy; 2016 Sicss Society. <br/>
+      All rights reserved.
+    </p>
+
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> <br/>
+      This work is licensed under a <br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+	International License</a>.
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+  </body>
+
+</html>
+
