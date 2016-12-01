@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, First Draft, First Revision</span>
+	<span class="revision">Version One, First Draft, Third Revision</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-83bbe47e4ba0273a260f65d1830d97d13d1e1181</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-559440867b59034b04be8d8677b61bff16fef3fe</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Seven">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Seven</a></span>
       </span>
 
@@ -241,7 +241,12 @@ $-$</p>
 <div class="paragraph">
 <p>Here, the $x_{1 \dots n}$ is a shorthand for $x_1, \dots, x_n$, and it denotes the correspondence of
 variables to elements for an assignment. Note that even if a variable is not occurring in a term, we
-could treat it as an variable of the term: the assignment of its value doesn&#8217;t matter though.</p>
+could treat it as an variable of the term: the assignment of its value doesn&#8217;t matter though. Here,
+also in the definition of interpretation for formulas which is giving below, we require the list of
+variables in the subscription to the double bracket covers all the free variables of the expression
+(i.e. either a term or a formula) in the double bracket. Symbolically, this requirement could be
+written as $ fv(t) \subseteq \{ x_1, \dots, x_n \} $ for the interpretation of terms and $ fv(\phi)
+\subseteq \{ x_1, \dots, x_n \} $ for the interpretation of formulas.</p>
 </div>
 <div class="paragraph">
 <p>Let us then consider the interpretation of a formula. With a structure in hand, just as for terms,
@@ -293,7 +298,9 @@ notation could also be extended to a set of formulas, where $\mathscr{A} \models
 for all $\phi \in \Phi$, $\mathscr{A} \models \phi$. Another very common and useful (but admittedly
 tricky for newcomers) notation is $\Phi \models \psi$, which means for all models $\mathscr{A}$ such
 that $\mathscr{A} \models \Phi$, $\mathscr{A} \models \psi$. Lastly, as a shorthand, we often write
-$\models \phi$ for $\emptyset \models \phi$, which means that $\phi$ is valid in any structure.</p>
+$\models \phi$ for $\emptyset \models \phi$, which means that $\phi$ is valid in any structure. We
+call $\phi$ <strong>logically valid</strong> if $\models \phi$, since if this holds, the validity of $ \phi $
+doesn&#8217;t depend on the choice of structure, but only the way we interpret formulas in <strong>Pred<sup>1</sup></strong>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Exercise 2.5.1:</strong> Prove that <em>in any theory and under any structure of that theory, for any formula
@@ -304,7 +311,11 @@ $\models \phi$ for $\emptyset \models \phi$, which means that $\phi$ is valid in
  $\phi$ s.t. $x \in fv(\phi)$, $\intpr{\phi} = \top $ iff $ \intpr{\forall{x}\phi} = \top$.</em></p>
 </div>
 <div class="paragraph">
-<p><strong>Exercise 2.5.3</strong> Prove that <em>in any theory, for any formula $\phi$ and $\psi$, $\models \phi
+<p><strong>Exercise 2.5.3</strong> Prove that <em>in any theory, for any formula $\phi$, $\models \phi$ iff for any
+structure $\mathscr{A}$ of that theory, $\mathscr{A} \models \phi$.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise 2.5.4</strong> Prove that <em>in any theory, for any formula $\phi$ and $\psi$, $\models \phi
  \leftrightarrow \psi$ iff under any structure of that theory, $\intpr{\phi} = \intpr{\psi}$.</em> Hint:
  $\phi \leftrightarrow \psi$ is defined to be $\phi \rightarrow \psi \wedge \psi \rightarrow \phi$.</p>
 </div>
