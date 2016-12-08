@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, First Draft</span>
+	<span class="revision">Version One, First Draft, Third Revision</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-66c6a57aca92e343847733736dc92272b777eaa7</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-49a495382ba04d5d3f8fdf5655497314c1cd04d2</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Eight">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Eight</a></span>
       </span>
 
@@ -205,7 +205,7 @@ provable relation in this particular style is given below.</p>
 %
 \phantom{\infrn{\text{Phantom}}{\text{Phan-}}{\text{tom}}} \\
 %
-\infrn{\forall\iota}{\Gamma\judges\phi[x\mapsto y] \hyposp y \not\in fv(\Gamma) }{%
+\infrn{\forall\iota}{\Gamma\judges\phi[x\mapsto y] \hyposp y \not\in fv(\Gamma) \cup fv(\phi) }{%
   \Gamma\judges\forall{x}\phi} \\
 %
 \infrn{\exists\iota}{\Gamma\judges\phi[x\mapsto t]}{\Gamma\judges\exists{x}\phi} \\
@@ -227,7 +227,9 @@ provable relation in this particular style is given below.</p>
 %
 \infrn{\forall\epsilon}{\Gamma\judges\forall{x}\phi}{\Gamma\judges\phi[x\mapsto t]} \\
 %
-\infrn{\exists\epsilon}{\Gamma\judges\exists{x}\phi \hyposp \Gamma,\phi[x\mapsto t]\judges\psi}{%
+\infrn{\exists\epsilon}{%
+  \Gamma\judges\exists{x}\phi \hyposp \Gamma,\phi[x\mapsto y]\judges\psi
+    \hyposp y\not\in fv(\Gamma) \cup fv(\phi) \cup fv(\psi)}{%
   \Gamma\judges\psi}
 \end{gathered} \\
 \infrn{\textit{refl} }{}{\Gamma\judges{t = t}} \rulesp
@@ -318,7 +320,7 @@ direct definition for the set of theorems; thereby the definition of the provabl
 does not constitute a proof theory. Moreover, just in the same spirit that the language of a first
 order theory is parameterized by the sets of prediction &amp; function symbols, the proof theory of a
 first order theory is parameterized by the set of non-logical axioms, which we will denote with
-$\mathfrak{A}$.</p>
+$\mathfrak{X}$.</p>
 </div>
 <div class="paragraph">
 <p>Nevertheless, with the provable relation defined in the natural deduction style, the set of theorems
