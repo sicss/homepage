@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
       <span class="referral">
 
 	
-	<span class="revision">Version One, First Draft, Fourth Revision</span>
+	<span class="revision">Version One, First Draft, Sixth Revision</span>
 	
 
-	<span class="repo-ref">logics-2016/lecture-notes:git-3e69a032631d8b2dbc544a3753abc33d83464366</span>
+	<span class="repo-ref">logics-2016/lecture-notes:git-205f3f4ca4032c411771a2211f34169f5cf57ffa</span>
 	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Eight">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Eight</a></span>
       </span>
 
@@ -223,7 +223,7 @@ provable relation in this particular style is given below.</p>
   \Gamma\judges\phi\rightarrow\psi \hyposp \Gamma\judges\phi}{\Gamma\judges\psi} \\
 %
 \infrn{\bot\epsilon _1}{\Gamma\judges\bot}{\Gamma\judges\phi} \rulesp
-\infrn{\neg\neg _C}{\Gamma\judges\neg\neg\phi}{\Gamma\judges\phi} \\
+\infrn{\bot\epsilon _2}{\Gamma,\neg\phi\judges\bot}{\Gamma\judges\phi} \\
 %
 \infrn{\forall\epsilon}{\Gamma\judges\forall{x}\phi}{\Gamma\judges\phi[x\mapsto t]} \\
 %
@@ -256,15 +256,10 @@ the abbreviation for <em>assumption</em>, since this rule allows one to regard a
 context (the assumptions) being provable. "<em>refl</em>", "<em>sym</em>", and "<em>trans</em>" are the abbreviations
 respectively for "reflexivity", "symmetry", and "transitivity", since these rules depict those
 properties of the equity relation. Each of the rest rule names contains a logical symbol and either
-"$\iota$" or "$\epsilon$" (except for "$\neg\neg _ C$", which will be explained later.) Those are
+"$\iota$" or "$\epsilon$". Those are
 the rules stipulating how a certain logical symbol could be <strong>introduced</strong> (those rules whose names
 end in "$\iota$") or <strong>eliminated</strong> (those rules whose names end in "$\epsilon$") in the
-conclusions. The rule $\neg\neg _ C$ could also be named $\bot\epsilon _ 2$, since recalling that
-$\neg\phi$ is just a shorthand for writing $\phi\rightarrow\bot$, this rule stipulates how $\bot$
-could be eliminated in another way. But yet including this rule in the definition of the provable
-relation, we effectively make the formal system we are building to be a member in the class of
-<em>classical logics</em>, instead of the class of <em>intuitionistic logics</em>, also this rule directly deals
-with double negation. Thus we name it $\neg\neg _C$, where the "C" denotes "classical".</p>
+conclusions.</p>
 </div>
 <div class="paragraph">
 <p>Recalling that writing down $\Gamma\judges\phi$ means that $\phi$ is provable from $\Gamma$, one
@@ -380,8 +375,13 @@ formula being discharged is usually denoted with a bracket.</p>
 <p>(add an example of simplified proof trees)</p>
 </div>
 <div class="paragraph">
-<p><strong>Exercise 3.1.5:</strong> Prove the "proof by contradiction" technique: <em>for any formula $\phi$ and any
-context $\Gamma$, $\Gamma\judges\phi$ if $\Gamma, \neg\phi\judges\bot$.</em></p>
+<p><strong>Exercise 3.1.5:</strong> Prove the double negation elimination rule: <em>for any formula $\phi$ and any
+context $\Gamma$, $\Gamma\judges\phi$ if $\Gamma\judges\neg\neg\phi$.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise 3.1.6:</strong> Prove that the connective $\wedge$ is commutative, i.e. <em>for any formula $\phi$
+and $\psi$, and for any context $\Gamma$, $\Gamma\judges\psi\wedge\phi$ if
+$\Gamma\judges\phi\wedge\psi$.</em></p>
 </div>
 </div>
 </div>

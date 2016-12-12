@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+    <meta name="description" content="">
+  
+
+  <title>Logics 2016 Lecture Notes Nine (Part III: 2) - Sicss Society</title>
+
+  <link href="/projects/logics-2016/lecture-notes/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/table.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/list.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/common.css" rel="stylesheet" type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/header.css" rel="stylesheet"  type="text/css"/>
+  <link href="/projects/logics-2016/lecture-notes/css/footer.css" rel="stylesheet"  type="text/css"/>
+
+  
+
+  
+
+  
+  
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/adoc.css" type="text/css">
+      <link rel="stylesheet" href="/projects/logics-2016/lecture-notes/css/coderay.css" type="text/css">
+  
+
+  
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']], displayMath: [['$-$', '$-$']]},
+  TeX: { equationNumbers: {autoNumber: "AMS"} }
+});
+
+// to fix headaches caused by Hyphenator.js
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+    data.math = data.math.replace(/\u00AD/g,"");
+  });
+});
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG" type="text/javascript"></script>
+  
+
+    <script src="/projects/logics-2016/lecture-notes/js/cjk-newline-remover.js" type="text/javascript"></script>
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  CjkNewlineRemover.processParagraphs()
+});
+    </script>
+
+</head>
+
+
+
+  <body>
+
+    
+
+
+
+    <main>
+      <link href="/projects/logics-2016/lecture-notes/css/article_base.css" rel="stylesheet" type="text/css"/>
+<script src="/projects/logics-2016/lecture-notes/js/hyphenate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll(".article").forEach(function(elem){elem.classList.add("hyphenate")});
+    document.querySelectorAll("div.title").forEach(function(elem){elem.classList.add("donthyphenate")});
+    Hyphenator.run();
+  });
+</script>
+
+<article class="article">
+
+  <header class="article-header">
+
+  <div class="page-navigation">
+    <ul>
+      <!-- <li id="page-navigation-previous"><span><a href="">Previous</a></span></li> -->
+      <li id="page-navigation-home"><span><a href="/projects/logics-2016/lecture-notes/">Contents</a></span></li>
+      <!-- <li id="page-navigation-next"><span><a href="">Next</a></span></li> -->
+    </ul>
+  </div>
+
+  <h1 class="article-title">Logics 2016 Lecture Notes Nine (Part III: 2)</h1>
+
+  <p class="article-meta">
+    
+      <time datetime="2016-12-11T00:00:00+09:00" itemprop="datePublished">December, 2016</time>
+
+      <br/>
+
+      
+
+      <span class="referral">
+
+	
+	<span class="revision">Version One, First Draft</span>
+	
+
+	<span class="repo-ref">logics-2016/lecture-notes:git-0ec90ff444e16b2d3beed01cb6de0c30faaca430</span>
+	<span class="url-ref"><a href="http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Nine">http://sicss.org/projects/logics-2016/lecture-notes/Logics-2016-Lecture-Notes-Nine</a></span>
+      </span>
+
+
+  </p>
+
+</header>
+
+<div class="article-content">
+  <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph preface">
+<div class="title">Preamble</div>
+<p>This article is part of the lecture notes series authored for Sicss Logics Seminar 2016. This
+article covers Part III: <strong>2. Basic Facts about Natural Deduction</strong>. This note is unfinished.</p>
+</div>
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+	  var TEXDEFS = MathJax.InputJax.TeX.Definitions;
+	  TEXDEFS.delimiter["\\llbracket"] = "27E6";
+	  TEXDEFS.delimiter["\\rrbracket"] = "27E7";
+	});
+
+	MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+	  var HTMLCSS = MathJax.OutputJax["HTML-CSS"],
+	      DELIMITERS = HTMLCSS.FONTDATA.DELIMITERS;
+
+	  var GENERAL = "STIXGeneral",
+	      SIZE1   = "STIXSizeOneSym",
+	      SIZE2   = "STIXSizeTwoSym",
+	      SIZE3   = "STIXSizeThreeSym",
+	      SIZE4   = "STIXSizeFourSym";
+
+	  if (HTMLCSS.fontInUse === "STIX") {
+	    // left white square bracket
+	    DELIMITERS[0x27E6] = {
+	      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+	      stretch: {top:[0x2553,GENERAL], ext:[0x2551,GENERAL], bot:[0x2559,GENERAL]}
+	    };
+	    // right white square bracket
+	    DELIMITERS[0x27E7] = {
+	      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+	      stretch: {top:[0x2556,GENERAL], ext:[0x2551,GENERAL], bot:[0x255C,GENERAL]}
+	    };
+	  }
+	});
+	</script>
+<div style="display:block">
+$-$
+\newcommand\judges{\vdash}
+\newcommand\tuple[1]{\langle #1 \rangle}
+\newcommand\intpr[1]{\llbracket #1 \rrbracket}
+%\newcommand\intprx[1]{\llbracket #1 \rrbracket_{x_1,\dots,x_n}}
+\newcommand\intprx[1]{\llbracket #1 \rrbracket_{x_{1\dots n}}}
+\newcommand\intprxn[2]{\llbracket #2 \rrbracket_{x_1,\dots,x_{#1}}}
+\newcommand\fun[2]{\lambda{#1}. #2}
+\newcommand\comprh[2]{\{#1\;\;|\;\;#2\}}
+\newcommand\qqquad{\quad\quad\quad}
+\newcommand\rulesp{\quad\quad}
+\newcommand\hyposp{\quad\;}
+\newcommand\ensuremath[1]{#1}
+\newcommand\infrn[3]{\ensuremath{\frac{#2}{#3}\;{#1}}}
+\newcommand\infr[2]{\begin{gathered}\underline{\;#1\;} \\ {#2}\end{gathered}}
+$-$
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="chapter-2-basic-facts-about-natural-deduction">Chapter 2. Basic Facts about Natural Deduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the previous chapter, we introduced the proof theory for <strong>Pred<sup>1</sup></strong>, where we adopt the natural
+deduction style proof theory for first order logic. In defining the proof theory, we first gave the
+inductive definition of the provable relation, which is a collection of 18 inference rules (two of
+which could be called axioms since they do not have any hypothesis). We also defined that, formally,
+a <em>proof</em> for a judgment is a derivation tree, of which each node is an instance of one such
+inference rules and the root of the tree being the judgment in question. But in practice, it soon
+becomes very repetitive in writing proof trees if we restrict ourselves to the 18 inference rules
+given in the definition of provable relation. For example, we already proved the commutativity of
+$\wedge$ in exercise 3.1.6 but if we restrict ourselves to the 18 inference rules, we have to write
+a proof tree with a size of 6 to prove $\phi\wedge\psi\judges\psi\wedge\phi\vee\gamma$, but we know
+that metalogically, we can abbreviate the part of the proof concerns the commutativity of $\wedge$
+into one step since we already have the result of exercise 3.1.6. In abbreviating those steps, we
+essentially treated the result of exercise 3.1.6 as a new inference rule, which is acceptable since
+given a well formed abbreviated proof tree, we essentially demonstrated that metalogically we can
+construct a proof tree using only the definitive reference rules. The goal of this chapter, is then
+to explore and prove several commonly used results about the natural deduction system that can be
+used in a similar way as the result of commutativity of conjunction mentioned above.</p>
+</div>
+<div class="sect2">
+<h3 id="facts-about-logical-conjunction-disjunction">Facts about Logical Conjunction &amp; Disjunction</h3>
+<div class="paragraph">
+<p>Prove the following facts.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>reflective law: $\infr{\quad \Gamma\judges\phi\quad}{\Gamma\judges\phi\wedge\phi}$,
+$\infr{\quad \Gamma\judges\phi \quad}{\Gamma\judges\phi\vee\phi}$</p>
+</li>
+<li>
+<p>commutative law: $\infr{\Gamma\judges\phi\wedge\psi}{\Gamma\judges\psi\wedge\phi}$,
+$\infr{\Gamma\judges\phi\vee\psi}{\Gamma\judges\psi\vee\phi}$</p>
+</li>
+<li>
+<p>distributive law:
+$\infr{\quad \Gamma\judges\gamma\wedge(\phi\vee\psi) \quad%
+  }{\Gamma\judges(\gamma\wedge\phi)\vee(\gamma\wedge\psi)}$,
+$\infr{\quad \Gamma\judges\gamma\vee(\phi\wedge\psi) \quad%
+  }{\Gamma\judges(\gamma\vee\phi)\wedge(\gamma\vee\psi)}$</p>
+</li>
+<li>
+<p>De Morgan&#8217;s law:
+$\infr{\quad \Gamma\judges\neg(\phi\wedge\psi) \quad}{\Gamma\judges(\neg\phi)\vee(\neg\psi)}$,
+$\infr{\quad \Gamma\judges\neg(\phi\vee\psi) \quad}{\Gamma\judges(\neg\phi)\wedge(\neg\psi)}$</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="facts-about-logical-entailment">Facts about Logical Entailment</h3>
+<div class="paragraph">
+<p>Prove the following facts.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>paraphrase:
+$\infr{\Gamma\judges\phi\rightarrow\psi}{\Gamma\judges\neg\phi\vee\psi}$,
+$\infr{\Gamma\judges\neg\phi\vee\psi}{\Gamma\judges\phi\rightarrow\psi}$</p>
+</li>
+<li>
+<p>contraposition:
+$\infr{\quad \Gamma\judges\phi\rightarrow\psi \quad}{\Gamma\judges\neg\psi\rightarrow\neg\phi}$</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="facts-about-quantifiers">Facts about Quantifiers</h3>
+<div class="paragraph">
+<p>Prove the following facts.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>De Morgan&#8217;s law:
+$\infr{\quad \Gamma\judges\forall{x}\phi \quad}{\Gamma\judges\neg\exists{x}\neg\phi}$,
+$\infr{\quad \Gamma\judges\exists{x}\phi \quad}{\Gamma\judges\neg\forall{x}\neg\phi}$,
+$\infr{\Gamma\judges\neg\forall{x}\phi}{\Gamma\judges\exists{x}\neg\phi}$,
+$\infr{\Gamma\judges\neg\exists{x}\phi}{\Gamma\judges\forall{x}\neg\phi}$</p>
+</li>
+<li>
+<p>generalization rule:
+$\infr{\Gamma\judges\phi \hyposp x\not\in fv(\Gamma)}{\Gamma\judges\forall{x}\phi}$</p>
+</li>
+<li>
+<p>$\alpha$-equivalence:
+$\infr{\Gamma\judges\forall{x}\phi \hyposp y\not\in fv(\phi)}{\Gamma\judges\forall{y}(\phi[x\mapsto y])}$
+$\infr{\Gamma\judges\exists{x}\phi \hyposp y\not\in fv(\phi)}{\Gamma\judges\exists{y}(\phi[x\mapsto y])}$</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="misc">Misc</h3>
+<div class="paragraph">
+<p>Prove the following facts.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Excluded Middle:
+$\infr{\qqquad\qquad}{\Gamma\judges\phi\vee\neg\phi}$</p>
+</li>
+<li>
+<p>Peirce&#8217;s law:
+$\infr{\qqquad\qquad\qqquad\qqquad%
+  }{\Gamma\judges((\phi\rightarrow\psi)\rightarrow\phi)\rightarrow\phi}$</p>
+</li>
+<li>
+<p>Equality Theorem:
+$\infr{\Gamma\judges\phi[x _1\mapsto s _1,\dots,x _k\mapsto s _k] \hyposp %
+          s _1 = t _1 \;\; \dots \;\; s _k = t _k %
+  }{\Gamma\judges\phi[x _1\mapsto t _1,\dots,x _k\mapsto t _k]}$</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</article>
+
+
+
+    </main>
+
+    <footer>
+
+  <div class="hr"></div>
+
+  <div class="copyright-notice">
+
+    <p>
+      Copyright &copy; 2016 Sicss Society. <br/>
+      All rights reserved.
+    </p>
+
+    <p>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> <br/>
+      This work is licensed under a <br/>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+	International License</a>.
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+  </body>
+
+</html>
+
